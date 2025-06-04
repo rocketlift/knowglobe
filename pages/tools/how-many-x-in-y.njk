@@ -1,0 +1,162 @@
+---
+layout: base.njk
+title: How Many X in a Y?
+---
+
+<h1>How Many X in a Y?</h1>
+
+<style>
+  .tool-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  .tool-container input,
+  .tool-container select,
+  .tool-container button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+  .tool-container input,
+  .tool-container select {
+    border: 1px solid #ccc;
+  }
+  .tool-container button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .tool-container button:hover {
+    background-color: #0056b3;
+  }
+  .result {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+</style>
+
+<div class="tool-container">
+  <label for="preset">Choose a fun comparison:</label>
+  <select id="preset" onchange="runPreset()">
+    <option value="">-- Select one --</option>
+    <option value="earth,sun">How many Earths fit in the Sun</option>
+    <option value="cup,gallon">How many cups fit in a gallon</option>
+    <option value="teaspoon,cup">How many teaspoons fit in a cup</option>
+    <option value="person,field">How many people fit in a football field</option>
+    <option value="moon,earthmoon">How many moons fit between Earth and the Moon</option>
+    <option value="bottle,ocean">How much water is in the Pacific Ocean (in bottles)</option>
+  </select>
+
+  <label for="xSize">Size of one unit (X) <span id="xUnit"></span>:</label>
+  <input type="number" id="xSize" placeholder="e.g., 1" />
+
+  <label for="ySize">Size of container (Y) <span id="yUnit"></span>:</label>
+  <input type="number" id="ySize" placeholder="e.g., 1000" />
+
+  <button onclick="calculateFit()">Calculate</button>
+
+  <div class="result" id="fitResult"></div>
+</div>
+
+{% raw %}
+<script>
+  const labelMap = {
+    "earth,sun": "Earths in the Sun",
+    "cup,gallon": "cups in a gallon",
+    "teaspoon,cup": "teaspoons in a cup",
+    "person,field": "people in a football field",
+    "moon,earthmoon": "moons between Earth and the Moon",
+    "bottle,ocean": "bottles of water to fill the Pacific Ocean"
+  };
+
+  const unitsMap = {
+    "earth": "cubic km (Earth volume)",
+    "sun": "cubic km (Sun volume)",
+    "cup": "cups",
+    "gallon": "gallons",
+    "teaspoon": "teaspoons",
+    "person": "sq ft per person",
+    "field": "sq ft (field size)",
+    "moon": "km (Moon diameter)",
+    "earthmoon": "km (Earth–Moon distance)",
+    "bottle": "liters",
+    "ocean": "liters (Pacific Ocean volume)"
+  };
+
+  const preciseLabels = ["cup,gallon", "teaspoon,cup"];
+
+  const examples = {
+    earth: 1,
+    sun: 1300000,
+    cup: 1,
+    gallon: 16,
+    teaspoon: 1,
+    "teaspoon,cup": [1, 48],
+    "person,field": [2.5, 4800],
+    moon: 3474.8,
+    earthmoon: 384400,
+    bottle: 1,
+    ocean: 710000000000000000000000
+  };
+
+  let currentLabel = "";
+  let currentKey = "";
+  let currentUnits = ["", ""];
+
+  function runPreset() {
+    const val = document.getElementById("preset").value;
+    currentKey = val;
+    if (!val) return;
+
+    if (examples[val]) {
+      const [xVal, yVal] = examples[val];
+      document.getElementById("xSize").value = xVal;
+      document.getElementById("ySize").value = yVal;
+    } else {
+      const [x, y] = val.split(',');
+      document.getElementById("xSize").value = examples[x];
+      document.getElementById("ySize").value = examples[y];
+    }
+
+    const [xUnitKey, yUnitKey] = val.split(',');
+    document.getElementById("xUnit").textContent = unitsMap[xUnitKey] || "";
+    document.getElementById("yUnit").textContent = unitsMap[yUnitKey] || "";
+
+    currentLabel = labelMap[val] || "units in container";
+    currentUnits = [unitsMap[xUnitKey] || "", unitsMap[yUnitKey] || ""];
+
+    calculateFit();
+  }
+
+  function calculateFit() {
+    const x = parseFloat(document.getElementById("xSize").value);
+    const y = parseFloat(document.getElementById("ySize").value);
+    const result = document.getElementById("fitResult");
+
+    if (isNaN(x) || isNaN(y) || x <= 0 || y <= 0) {
+      result.textContent = "Please enter valid numbers for both X and Y.";
+      return;
+    }
+
+    const count = y / x;
+    let output = "";
+
+    if (currentKey === "bottle,ocean") {
+      output = `It would take about ${Math.floor(count).toLocaleString()} ${currentLabel}.`;
+    } else {
+      const prefix = preciseLabels.includes(currentKey) ? "You can fit" : "You can fit about";
+      output = `${prefix} ${Math.floor(count).toLocaleString()} ${currentLabel}.`;
+    }
+
+    result.textContent = output;
+  }
+</script>
+{% endraw %}

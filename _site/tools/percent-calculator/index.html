@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Percent Calculator</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <style>
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #666;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+  <input type="checkbox" id="menu-toggle" />
+  <label for="menu-toggle" class="menu-icon">☰ Menu</label>
+
+  <ul class="nav">
+    <li><a href="/">Home</a></li>
+
+    <li class="dropdown">
+      <a href="#">Tools</a>
+      <ul class="dropdown-menu">
+        <li><a href="/tools/ai-job-risk/">AI Job Risk</a></li>
+        <li><a href="/tools/timeline-comparator/">Timeline Comparator</a></li>
+        <li><a href="/tools/percent-calculator/">Percent Calculator</a></li>
+        <li><a href="/tools/how-many-x-in-y/">How Many X in Y?</a></li>
+      </ul>
+    </li>
+
+    <li class="dropdown">
+      <a href="#">About</a>
+      <ul class="dropdown-menu">
+        <li><a href="/how-it-works/">How It Works</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
+  <main class="page-container">
+    
+<h1>Percent Calculator</h1>
+
+<style>
+  .tool-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  .tool-container input {
+    width: 100%;
+    padding: 0.5rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  .tool-container select, .tool-container button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .tool-container button:hover {
+    background-color: #0056b3;
+  }
+  .result {
+    margin-top: 1rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #007bff;
+  }
+</style>
+
+<div class="tool-container">
+  <label for="mode">Choose a mode:</label>
+  <select id="mode">
+    <option value="percentOf">What is X% of Y?</option>
+    <option value="percentWhat">X is what percent of Y?</option>
+    <option value="percentChange">Percent change from X to Y</option>
+  </select>
+
+  <input type="number" id="value1" placeholder="Enter first value" />
+  <input type="number" id="value2" placeholder="Enter second value" />
+
+  <button onclick="calculate()">Calculate</button>
+
+  <div class="result" id="result"></div>
+</div>
+
+
+<script>
+  function calculate() {
+    const mode = document.getElementById("mode").value;
+    const val1 = parseFloat(document.getElementById("value1").value);
+    const val2 = parseFloat(document.getElementById("value2").value);
+    const resultDiv = document.getElementById("result");
+
+    if (isNaN(val1) || isNaN(val2)) {
+      resultDiv.textContent = "Please enter two valid numbers.";
+      return;
+    }
+
+    let result;
+    if (mode === "percentOf") {
+      result = (val1 / 100) * val2;
+      resultDiv.textContent = `${val1}% of ${val2} is ${result}`;
+    } else if (mode === "percentWhat") {
+      result = (val1 / val2) * 100;
+      resultDiv.textContent = `${val1} is ${result.toFixed(2)}% of ${val2}`;
+    } else if (mode === "percentChange") {
+      result = ((val2 - val1) / val1) * 100;
+      resultDiv.textContent = `Percent change from ${val1} to ${val2} is ${result.toFixed(2)}%`;
+    }
+  }
+</script>
+
+
+  </main>
+  <footer class="page-container">
+    <p><small>© 2025 KnowGlobe. No data collected.</small></p>
+  </footer>
+</body>
+</html>

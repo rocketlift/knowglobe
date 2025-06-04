@@ -1,0 +1,138 @@
+---
+layout: base.njk
+title: Will AI Take My Job?
+---
+
+<div class="page-container">
+
+  <h1>Will AI Take My Job?</h1>
+
+  <div class="tool-container">
+    <label for="job-title">Enter your job title:</label>
+    <input type="text" id="job-title" placeholder="e.g., Graphic Designer" />
+    <button onclick="checkRisk()">Check My Risk</button>
+    <div id="result" style="margin-top: 2rem;"></div>
+  </div>
+
+</div>
+
+<!-- Fuse.js -->
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2/dist/fuse.min.js"></script>
+
+<script>
+  let jobData;
+  let fuse;
+
+  async function checkRisk() {
+    const input = document.getElementById('job-title').value.trim().toLowerCase();
+    const resultEl = document.getElementById('result');
+
+    if (!input) {
+      resultEl.innerHTML = "<p>Please enter a job title.</p>";
+      return;
+    }
+
+    if (!jobData) {
+      try {
+        const response = await fetch('/assets/data/ai-risk.json'); // fixed path
+        if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+        jobData = await response.json();
+        fuse = new Fuse(jobData, { keys: ['title'], threshold: 0.4 });
+      } catch (err) {
+        console.error(err);
+        resultEl.innerHTML = "<p>Unable to load risk data. Try again later.</p>";
+        return;
+      }
+    }
+
+    const results = fuse.search(input);
+    if (!results.length) {
+      const suggestions = jobData.map(job => job.title).slice(0, 10);
+      resultEl.innerHTML = `
+        <p>No data for "<strong>${input}</strong>".</p>
+        <p><strong>Try:</strong></p>
+        <div>${suggestions.map(title => `<button onclick="searchFor('${title}')">${title}</button>`).join(' ')}</div>
+      `;
+    } else {
+      const match = results[0].item;
+      const risk = match.risk;
+      let status = "🟢 Safe for now";
+      let advice = "Your job involves tasks that are difficult for AI to replicate.";
+
+      if (risk >= 0.8) {
+        status = "🔴 High risk";
+        advice = "Consider developing skills that complement AI.";
+      } else if (risk >= 0.5) {
+        status = "🟠 At risk";
+        advice = "Focus on developing uniquely human skills.";
+      }
+
+      resultEl.innerHTML = `
+        <p><strong>Closest match:</strong> ${match.title}</p>
+        <p><strong>Risk of automation:</strong> ${(risk * 100).toFixed(0)}%</p>
+        <p><strong>Status:</strong> ${status}</p>
+        <p><strong>Advice:</strong> ${advice}</p>
+        ${match.blurb ? `<div class="blurb">${match.blurb}</div>` : ""}
+        <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">
+          Based on research into AI and job task automation potential.
+        </p>
+      `;
+    }
+  }
+
+  function searchFor(title) {
+    document.getElementById('job-title').value = title;
+    checkRisk();
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById('job-title').addEventListener('keydown', e => {
+      if (e.key === 'Enter') checkRisk();
+    });
+  });
+</script>
+
+<style>
+  .tool-container {
+    background: #fff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  }
+  .tool-container input, .tool-container button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+  .tool-container input { border: 1px solid #ccc; }
+  .tool-container button {
+    background-color: #17a2b8;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .tool-container button:hover {
+    background-color: #138496;
+  }
+  .blurb {
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: #f6f6f6;
+    border-left: 4px solid #ccc;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    color: #333;
+  }
+  .page-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+    text-align: center;
+  }
+
+</style>

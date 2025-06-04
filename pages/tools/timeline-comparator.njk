@@ -1,0 +1,91 @@
+---
+layout: base.njk
+title: Timeline Comparator
+---
+
+<h1>Timeline Comparator</h1>
+
+<style>
+  .tool-container {
+    background: #ffffff;
+    padding: 1.5rem;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  }
+  .tool-container input,
+  .tool-container button {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 1rem;
+    font-size: 1rem;
+    border-radius: 4px;
+  }
+  .tool-container input {
+    border: 1px solid #ccc;
+  }
+  .tool-container button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  .tool-container button:hover {
+    background-color: #1e7e34;
+  }
+  .result {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+</style>
+
+<div class="tool-container">
+  <label for="birthYear">Enter a birth year:</label>
+  <input type="number" id="birthYear" placeholder="e.g., 1985" min="1000" max="2100" />
+  <button onclick="compareTimeline()">Compare Timeline</button>
+
+  <div class="result" id="timelineResult"></div>
+</div>
+
+{% raw %}
+<script>
+  const timelineData = [
+    { year: 1776, event: "U.S. Declaration of Independence" },
+    { year: 1865, event: "End of U.S. Civil War" },
+    { year: 1920, event: "Women gain right to vote (U.S.)" },
+    { year: 1945, event: "End of World War II" },
+    { year: 1969, event: "the first Moon landing", phrase: "on the first Moon landing" },
+    { year: 1977, event: "the release of the first Star Wars movie", phrase: "on the release of the first Star Wars movie" },
+    { year: 1986, event: "the Chernobyl nuclear disaster", phrase: "when the Chernobyl nuclear disaster happened" },
+    { year: 1989, event: "the Fall of the Berlin Wall", phrase: "with the Fall of the Berlin Wall" },
+    { year: 2001, event: "the 9/11 Attacks", phrase: "during the 9/11 Attacks" },
+    { year: 2016, event: "the Brexit referendum", phrase: "during the Brexit referendum" },
+    { year: 2020, event: "the start of the COVID-19 Pandemic", phrase: "at the start of the COVID-19 Pandemic" }
+  ];
+
+  function compareTimeline() {
+    const birthYear = parseInt(document.getElementById("birthYear").value);
+    const output = document.getElementById("timelineResult");
+    if (isNaN(birthYear)) {
+      output.textContent = "Please enter a valid year.";
+      return;
+    }
+
+    const result = timelineData.map(item => {
+      if (birthYear > item.year) {
+        const yearsBefore = birthYear - item.year;
+        return `${item.event} happened ${yearsBefore} year${yearsBefore !== 1 ? 's' : ''} before you were born.`;
+      } else if (birthYear === item.year) {
+        return `${item.event} happened the year you were born.`;
+      } else {
+        const age = item.year - birthYear;
+        return `You were ${age === 0 ? 'born' : age + ' year' + (age !== 1 ? 's' : '') + ' old'} ${item.phrase ? item.phrase : 'at the time of ' + item.event}.`;
+      }
+    });
+
+    output.innerHTML = "<ul><li>" + result.join("</li><li>") + "</li></ul>";
+  }
+</script>
+{% endraw %}

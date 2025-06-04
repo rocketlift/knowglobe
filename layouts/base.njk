@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{{ title }}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/assets/styles.css" />
+  <style>
+    .page-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1rem;
+    }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      color: #666;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  {% include "nav.njk" %}
+  <main class="page-container">
+    {{ content | safe }}
+  </main>
+  <footer class="page-container">
+    <p><small>© 2025 KnowGlobe. No data collected.</small></p>
+  </footer>
+</body>
+</html>

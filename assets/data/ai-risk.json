@@ -1,0 +1,367 @@
+[
+  {
+    "title": "accountant",
+    "risk": 0.79,
+    "blurb": "Accountants face moderate automation risk with software handling more of the math. But interpreting messy records, navigating gray areas, and saying 'I wouldn't file that just yet' still requires the kind of judgment that comes with sharp eyes and sharpened pencils."
+  },
+  {
+    "title": "actor",
+    "risk": 0.37,
+    "blurb": "Actors face moderate risk in roles like voiceover or background work where AI is gaining ground. But inhabiting a character, holding a breath before a line, or making an audience cry without saying a word still belongs to someone made of flesh and feeling."
+  },
+  {
+    "title": "architect",
+    "risk": 0.14,
+    "blurb": "Architects face low risk. AI can draft floorplans, but dreaming up a space that feels like home before it’s built, and balancing function with light, air, and feeling, still belongs to someone who’s walked through both sketches and site dust."
+  },
+  {
+    "title": "barista",
+    "risk": 0.87,
+    "blurb": "Baristas face high automation risk in high-volume cafés. But no robot notices you're having a hard morning or pours a heart into the foam just because you always order the same thing. A good barista serves more than coffee."
+  },
+  {
+    "title": "chef",
+    "risk": 0.56,
+    "blurb": "Chefs face moderate risk in chain kitchens where speed rules. But creating a dish that tells a story, adjusting a sauce by taste alone, or leading a team through dinner rush still requires heat, instinct, and a human palate."
+  },
+  {
+    "title": "composer",
+    "risk": 0.37,
+    "blurb": "Composers face low to moderate risk. AI can generate melodies, but shaping meaning from silence, layering harmony with history, or chasing the perfect motif until it breathes still takes a person who listens with their whole life."
+  },
+  {
+    "title": "construction worker",
+    "risk": 0.35,
+    "blurb": "Construction workers face low automation risk. AI can simulate builds, but it doesn’t climb ladders, adjust for crooked soil, or fix what the blueprint didn’t see. This work lives in calluses, sweat, and field smarts."
+  },
+  {
+    "title": "content creator",
+    "risk": 0.68,
+    "blurb": "Content creators face moderate risk as AI edits, writes, and posts with speed. But knowing what will land, building trust over time, and hitting publish with a gut feeling still takes a human willing to show up and be seen."
+  },
+  {
+    "title": "copywriter",
+    "risk": 0.51,
+    "blurb": "Copywriters face growing automation in SEO and ads. But finding the turn of phrase that sticks, or writing like someone is listening instead of searching, still comes from the kind of voice that’s earned through edits and instinct."
+  },
+  {
+    "title": "cybersecurity analyst",
+    "risk": 0.12,
+    "blurb": "Cybersecurity analysts face low risk. AI can flag threats, but knowing which blip matters or spotting the quiet breach no one else sees still takes someone who knows how digital shadows move."
+  },
+  {
+    "title": "data analyst",
+    "risk": 0.61,
+    "blurb": "Data analysts face moderate automation risk. AI finds patterns, but asking the right question, framing the right story, or spotting when the numbers don't tell the whole truth still requires a human mind connecting the dots."
+  },
+  {
+    "title": "data entry clerk",
+    "risk": 0.95,
+    "blurb": "Data entry clerks face very high risk. Repetition is a robot's playground, and rows and columns are where software shines. But behind every spreadsheet has always been someone quietly holding the system together, one field at a time."
+  },
+  {
+    "title": "delivery driver",
+    "risk": 0.89,
+    "blurb": "Delivery drivers face high automation risk as self-driving vehicles and drones expand. But finding the right entrance, navigating stairs in the rain, or waiting an extra minute because they saw your lights come on—that's still human delivery."
+  },
+  {
+    "title": "dentist",
+    "risk": 0.04,
+    "blurb": "Dentists face very low risk. AI can assist with imaging, but no machine can ease a patient’s nerves or make a delicate adjustment based on a single flinch. This is technical care layered with trust."
+  },
+  {
+    "title": "digital marketer",
+    "risk": 0.71,
+    "blurb": "Digital marketers face moderate risk as AI optimizes campaigns and tracks clicks. But strategy, tone, and the spark that gets someone to care in the first place still comes from a human watching the culture, not just the numbers."
+  },
+  {
+    "title": "doctor",
+    "risk": 0.02,
+    "blurb": "Doctors face very low automation risk. AI can analyze symptoms, but diagnosis is often in the pause, the gut feeling, or the question that wasn’t on the checklist. Care is more than clinical."
+  },
+  {
+    "title": "electrician",
+    "risk": 0.18,
+    "blurb": "Electricians face low risk. AI doesn’t crawl into attics, troubleshoot half-finished renovations, or figure out why nothing works when everything should. This job runs on practical genius and hands that know the wires like a second language."
+  },
+  {
+    "title": "factory worker",
+    "risk": 0.93,
+    "blurb": "Factory workers face high automation risk, especially in repetitive roles where machines excel. But knowing when something sounds off, moves wrong, or just doesn’t feel right is not in the code. It’s in the calloused hands and practiced rhythm of someone who’s walked the floor a thousand times."
+  },
+  {
+    "title": "financial analyst",
+    "risk": 0.65,
+    "blurb": "Financial analysts face moderate automation risk. AI can crunch numbers and flag anomalies, but sensing a shift in the story behind the chart before it hits the headlines still takes a human reading between the lines."
+  },
+  {
+    "title": "firefighter",
+    "risk": 0.16,
+    "blurb": "Firefighters face low automation risk. You can’t automate courage or the instinct that kicks in when plans fall apart. This job happens in smoke and split seconds where trust, grit, and heart matter more than perfect code."
+  },
+  {
+    "title": "fitness instructor",
+    "risk": 0.29,
+    "blurb": "Fitness instructors face low risk. AI can track workouts, but it can’t read the room, adjust on the fly, or know when someone needs a push or a pause. This work is about energy, connection, and the human drive to move."
+  },
+  {
+    "title": "game developer",
+    "risk": 0.49,
+    "blurb": "Game developers face moderate risk as AI generates assets and tests code. But crafting an experience that feels alive, where every choice matters, still requires a human who knows how to make players feel something real."
+  },
+  {
+    "title": "flight attendant",
+    "risk": 0.34,
+    "blurb": "Flight attendants are at low to moderate risk. Robots might serve drinks, but they don’t notice the pale face in seat 17A or know when a calming word can steady more than turbulence. Safety isn’t just procedure. It’s presence."
+  },
+  {
+    "title": "graphic designer",
+    "risk": 0.64,
+    "blurb": "Graphic designers face moderate risk as AI tools generate faster than ever. But shaping how something feels, how it moves you before you even notice, is still the work of someone who’s lived inside the tension between blank space and meaning."
+  },
+  {
+    "title": "hairdresser",
+    "risk": 0.23,
+    "blurb": "Hairdressers are at low automation risk. You can’t outsource trust or replace the quiet transformation that happens in a chair. The cut, the talk, the mirror moment—it’s all human, and always will be."
+  },
+  {
+    "title": "high school teacher",
+    "risk": 0.01,
+    "blurb": "High school teachers face very low risk. AI might assign essays or grade quizzes, but it won’t catch the glance from the back row or shift a lesson plan because someone needed a win today. Teaching is timing, empathy, and a hundred small decisions no machine can see coming."
+  },
+  {
+    "title": "hr manager",
+    "risk": 0.69,
+    "blurb": "HR managers face moderate risk with AI scanning resumes and tracking compliance. But holding space in hard conversations, sensing when morale dips, or helping someone stay, not just work, still takes a human pulse and a practiced ear."
+  },
+  {
+    "title": "instructional coordinator",
+    "risk": 0.4,
+    "blurb": "Instructional coordinators face low to moderate risk. AI can sort standards and suggest sequences, but shaping a path that actually reaches students takes someone who’s seen what lights up a room and what falls flat."
+  },
+  {
+    "title": "journalist",
+    "risk": 0.58,
+    "blurb": "Journalists face moderate automation risk, especially in fast-turn stories. But the courage to knock on one more door or ask the question that pauses the room is not in a dataset. It’s in the stubborn heartbeat of someone who still believes in truth."
+  },
+  {
+    "title": "lawyer",
+    "risk": 0.04,
+    "blurb": "Lawyers face low automation risk. AI can summarize precedent, but reading a room, arguing a case, or crafting language that holds up under pressure still calls for human precision shaped by years of thinking out loud and on your feet."
+  },
+  {
+    "title": "librarian",
+    "risk": 0.31,
+    "blurb": "Librarians face low risk. Algorithms retrieve data, but librarians guide people toward knowledge, safety, curiosity, or quiet. They don’t just organize information. They humanize access."
+  },
+  {
+    "title": "marketing manager",
+    "risk": 0.67,
+    "blurb": "Marketing managers face moderate risk. AI can test ads and track engagement, but sensing the moment, shaping a voice, or knowing when not to launch are calls made with gut, not just graphs."
+  },
+  {
+    "title": "massage therapist",
+    "risk": 0.19,
+    "blurb": "Massage therapists are at low automation risk. No robot can read a breath, shift pressure mid-stroke, or follow pain to its hiding place the way trained hands can. This is healing built from presence."
+  },
+  {
+    "title": "mechanical engineer",
+    "risk": 0.31,
+    "blurb": "Mechanical engineers face low risk. AI can simulate and suggest, but making real-world things behave takes the kind of thinking that turns problems in your head during lunch and sketches solutions on a napkin before they vanish."
+  },
+  {
+    "title": "middle school teacher",
+    "risk": 0.01,
+    "blurb": "Middle school teachers face extremely low automation risk. AI can’t navigate a room full of shifting moods, growing minds, and inside jokes about frogs. This work takes improvisation, patience, and the kind of heart that shows up every day no matter what."
+  },
+  {
+    "title": "music editor",
+    "risk": 0.48,
+    "blurb": "Music editors face moderate automation risk, especially in cutting and syncing. But knowing when to leave silence, where emotion crests, and how to serve the story through sound is still a human decision made with instinct, not just timecode."
+  },
+  {
+    "title": "music producer",
+    "risk": 0.41,
+    "blurb": "Music producers face low to moderate risk. AI can balance levels, but it can’t walk into a studio and shift the energy with a word, or know when the take was imperfect and exactly right. That’s human frequency, and it hits different."
+  },
+  {
+    "title": "musician",
+    "risk": 0.33,
+    "blurb": "Musicians are at low risk. AI can replicate tone and tempo, but not the trembling note that wasn’t planned or the pause that draws tears. Music lives in breath, risk, and the person who plays it like they mean it."
+  },
+  {
+    "title": "nurse",
+    "risk": 0.08,
+    "blurb": "Nurses face very low automation risk. A machine might monitor vitals, but it won’t notice the hesitation in someone's voice or offer a joke at the right moment just to ease the room. Healing begins with presence."
+  },
+  {
+    "title": "paralegal",
+    "risk": 0.84,
+    "blurb": "Paralegals face high automation risk with AI taking over research and drafting. But knowing when a clause feels off or a deadline slipped through the cracks still calls for a human who’s thinking three steps ahead and quietly saving the day."
+  },
+  {
+    "title": "personal trainer",
+    "risk": 0.27,
+    "blurb": "Personal trainers are at low risk. AI can log reps, but not look you in the eye after a hard week and say, 'You've got this.' Coaching is part sweat, part psychology, and mostly knowing how to show up for someone."
+  },
+  {
+    "title": "pharmacist",
+    "risk": 0.23,
+    "blurb": "Pharmacists face moderate automation risk in dispensing and inventory. But answering a nervous question, catching a dangerous interaction, or simply offering reassurance across the counter is still human judgment at work."
+  },
+  {
+    "title": "photographer",
+    "risk": 0.72,
+    "blurb": "Photographers face moderate risk as AI generates and edits images. But no bot captures a fleeting glance, a real laugh, or the warmth between people. Great photography is built on trust and timing, not just lenses and light."
+  },
+  {
+    "title": "piano teacher",
+    "risk": 0.23,
+    "blurb": "Piano teachers have low automation risk. AI can play notes and suggest exercises, but it can’t hear tension in a wrist, or encourage a student through the messy middle of learning. This is slow magic, passed hand to hand."
+  },
+  {
+    "title": "pilot",
+    "risk": 0.28,
+    "blurb": "Pilots face low to moderate risk. Autopilot may steer the route, but deciding when to land, handling the unexpected, and keeping calm when others can’t is still the work of steady hands and human judgment."
+  },
+  {
+    "title": "plumber",
+    "risk": 0.15,
+    "blurb": "Plumbers face low automation risk. Pipes don’t behave the way diagrams say they should, and no robot is reaching behind the toilet to solve the problem with a flashlight and a sense of humor."
+  },
+  {
+    "title": "police officer",
+    "risk": 0.22,
+    "blurb": "Police officers face low risk. AI can scan data, but reading a situation in real time, building trust, and knowing when not to act is still human work that relies on wisdom more than code."
+  },
+  {
+    "title": "postsecondary teacher",
+    "risk": 0.0,
+    "blurb": "Postsecondary teachers face near-zero risk. AI can explain the material, but not guide a breakthrough, spark a debate, or write a recommendation that sees the student beyond the grade."
+  },
+  {
+    "title": "preschool teacher",
+    "risk": 0.01,
+    "blurb": "Preschool teachers are at very low risk. AI can’t notice when a child needs a story instead of a worksheet or offer a hug that says 'you’re safe here.' Early learning is about trust, play, and presence."
+  },
+  {
+    "title": "product manager",
+    "risk": 0.45,
+    "blurb": "Product managers face moderate automation risk. AI can assist with planning, but keeping teams aligned through shifting priorities and half-formed vision still takes someone who can translate chaos into progress and keep a meeting on track with one raised eyebrow."
+  },
+  {
+    "title": "project manager",
+    "risk": 0.54,
+    "blurb": "Project managers face moderate risk. AI can track timelines, but managing people, smoothing conflict, and adjusting when everything slips at once is still handled with human calm and a whiteboard full of arrows."
+  },
+  {
+    "title": "real estate agent",
+    "risk": 0.66,
+    "blurb": "Real estate agents face moderate automation risk. AI can suggest listings and crunch numbers, but it can't feel a family's hesitation in the doorway or know when to say, 'Sleep on it.' Buying a home is more than a transaction, and guiding it takes a human touch."
+  },
+  {
+    "title": "receptionist",
+    "risk": 0.91,
+    "blurb": "Receptionists face high risk with kiosks and bots taking over basic tasks. But reading a room, managing flow, and offering the first face someone sees when they need help still takes intuition, grace, and good memory for names and moods alike."
+  },
+  {
+    "title": "retail sales associate",
+    "risk": 0.94,
+    "blurb": "Retail sales associates face high automation risk. But no algorithm knows how to turn a bad day around with the right shoes or spot the look that says, 'Please help me without making it weird.' That kind of help is personal."
+  },
+  {
+    "title": "social media manager",
+    "risk": 0.73,
+    "blurb": "Social media managers face moderate risk as AI drafts posts and analyzes engagement. But setting tone, sensing when silence is better than spin, and understanding what the audience needs in a moment still relies on a human behind the screen."
+  },
+  {
+    "title": "social worker",
+    "risk": 0.21,
+    "blurb": "Social workers face low automation risk. AI can store case files, but it can’t sit with someone in their darkest hour or recognize a cry for help in silence. This work runs on empathy, not scripts."
+  },
+  {
+    "title": "software engineer",
+    "risk": 0.38,
+    "blurb": "Software engineers face moderate risk with AI writing more code every day. But debugging under pressure, designing systems from scratch, and knowing what to build next still takes creative logic and lived experience."
+  },
+  {
+    "title": "songwriter",
+    "risk": 0.45,
+    "blurb": "Songwriters face some risk as AI generates lyrics and melodies. But writing the line that says what someone couldn’t, or the verse that stays with you years later, still takes a human who's lived it and turned it into music."
+  },
+  {
+    "title": "sound engineer",
+    "risk": 0.51,
+    "blurb": "Sound engineers face moderate automation risk. AI can process levels, but hearing the hiss in a quiet room or making a mic feel invisible still takes years of practice and ears trained in trust, not just frequency."
+  },
+  {
+    "title": "sound mixer",
+    "risk": 0.62,
+    "blurb": "Sound mixers face moderate risk with automation in post-production. But building the perfect mix in a live setting or knowing exactly when to pull the music back for a line to land is still guided by instinct shaped through time."
+  },
+  {
+    "title": "special education teacher",
+    "risk": 0.01,
+    "blurb": "Special education teachers face extremely low risk. You can't automate the patience it takes to build trust, or the joy of celebrating a breakthrough that came from weeks of trying. This work is one-on-one, heart-to-heart."
+  },
+  {
+    "title": "surgeon",
+    "risk": 0.01,
+    "blurb": "Surgeons face very low automation risk. AI can assist in precision, but making the call when seconds matter, or steadying a team through the unexpected, still requires human judgment and hands trained by experience."
+  },
+  {
+    "title": "tax preparer",
+    "risk": 0.89,
+    "blurb": "Tax preparers face high risk as software handles many filings. But complex cases, missing paperwork, and knowing which form saves someone thousands still benefit from a sharp human eye and a calculator that’s seen some things."
+  },
+  {
+    "title": "teacher assistant",
+    "risk": 0.36,
+    "blurb": "Teacher assistants face moderate risk, but AI can’t kneel beside a child who’s stuck or know when encouragement means more than explanation. Learning often begins with kindness and presence."
+  },
+  {
+    "title": "telemarketer",
+    "risk": 0.99,
+    "blurb": "Telemarketers face near-total automation. AI already handles scripts and call flows, but it can’t absorb rejection with rhythm or keep a warm voice after the fiftieth hang-up. That grit, however underpaid, has always been human."
+  },
+  {
+    "title": "therapist",
+    "risk": 0.18,
+    "blurb": "Therapists face low automation risk. AI can generate prompts, but it can’t sit through silence or catch the subtle shift that says a breakthrough is near. Real healing lives in trust, timing, and shared presence."
+  },
+  {
+    "title": "truck driver",
+    "risk": 0.85,
+    "blurb": "Truck drivers face high risk, especially on predictable highway routes. But long hours, tricky turns, and the instinct to pull over for someone in need still belong to a person in the seat, not a sensor."
+  },
+  {
+    "title": "ui designer",
+    "risk": 0.58,
+    "blurb": "UI designers face moderate automation risk. AI can draft layouts, but it can’t feel what flows or spot the hesitation in a user’s click. That intuition is still guided by someone who understands how people think with their eyes."
+  },
+  {
+    "title": "ux designer",
+    "risk": 0.52,
+    "blurb": "UX designers face moderate risk. AI can surface insights, but shaping an experience that feels natural, kind, or even joyful still requires a human who knows that frustration lives in the details."
+  },
+  {
+    "title": "veterinarian",
+    "risk": 0.14,
+    "blurb": "Veterinarians face low risk. AI can analyze scans and symptoms, but it won’t gently lift a trembling paw or deliver hard news with compassion. This work is full of fur, instinct, and heart."
+  },
+  {
+    "title": "waiter",
+    "risk": 0.92,
+    "blurb": "Waiters face high automation risk, especially in fast casual dining. But knowing when to check in, when to give space, or how to read a table without a word is still an art only humans practice."
+  },
+  {
+    "title": "web developer",
+    "risk": 0.42,
+    "blurb": "Web developers face moderate risk as AI fills in code. But building something that actually works for real people, under real constraints, still takes someone who can think through both logic and lived use."
+  },
+  {
+    "title": "writer",
+    "risk": 0.53,
+    "blurb": "Writers face moderate risk. AI can reword and repackage, but it cannot write with memory, longing, or that one strange metaphor that makes everything land. Storytelling still begins with a human voice."
+  }
+]

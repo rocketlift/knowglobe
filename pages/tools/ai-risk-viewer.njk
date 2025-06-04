@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Job Risk Viewer</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f7f7f7;
+      color: #222;
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      border-radius: 12px;
+      background: white;
+      box-shadow: 0 0 30px rgba(0, 0, 0, 0.05);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 1em;
+    }
+    #sort-controls {
+      text-align: center;
+      margin-bottom: 1.5em;
+    }
+    select {
+      padding: 0.5em;
+      font-size: 1rem;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      padding: 12px;
+      margin-bottom: 10px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #fdfdfd;
+    }
+    .risk {
+      float: right;
+      font-weight: bold;
+    }
+    footer {
+      font-size: 0.9rem;
+      color: #666;
+      margin-top: 2em;
+      border-top: 1px solid #ddd;
+      padding-top: 1em;
+    }
+  </style>
+</head>
+<body>
+  <h1>Will AI Replace My Job?</h1>
+  <div id="sort-controls">
+    <label for="sort-by">Sort by: </label>
+    <select id="sort-by" onchange="renderList()">
+      <option value="risk-desc">Highest Risk First</option>
+      <option value="risk-asc">Lowest Risk First</option>
+      <option value="alpha">Alphabetical</option>
+    </select>
+  </div>
+  <ul id="job-list"></ul>
+
+  <footer>
+    <strong>Sources:</strong> Risk scores based on research from academic AI impact studies, expert forecasts, and task automation datasets. This tool provides estimates and should be interpreted as directional guidance, not guarantees.
+  </footer>
+
+  <script>
+    let jobData = [];
+
+    function renderList() {
+      const list = document.getElementById("job-list");
+      const sortBy = document.getElementById("sort-by").value;
+      list.innerHTML = '';
+
+      let sortedJobs = [...jobData];
+      if (sortBy === 'risk-desc') {
+        sortedJobs.sort((a, b) => b.risk - a.risk);
+      } else if (sortBy === 'risk-asc') {
+        sortedJobs.sort((a, b) => a.risk - b.risk);
+      } else if (sortBy === 'alpha') {
+        sortedJobs.sort((a, b) => a.title.localeCompare(b.title));
+      }
+
+      sortedJobs.forEach((job, index) => {
+        const { title, risk, blurb } = job;
+
+        const riskPercent = (risk * 100).toFixed(0) + '%';
+        const item = document.createElement("li");
+        item.innerHTML = `
+          <strong>${index + 1}. ${title}</strong>
+          <span class='risk'>Risk: ${riskPercent}</span>
+          ${blurb ? `<div class="blurb">${blurb}</div>` : ''}
+        `;
+
+        list.appendChild(item);
+      });
+    }
+
+    fetch('/assets/data/ai-risk.json')
+      .then(res => res.json())
+      .then(data => {
+        jobData = data;
+        renderList();
+      })
+      .catch(err => {
+        document.getElementById("job-list").innerHTML = "<li>Error loading data.</li>";
+        console.error("Job load error:", err);
+      });
+  </script>
+</body>
+</html>
