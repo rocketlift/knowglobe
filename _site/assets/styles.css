@@ -27,7 +27,6 @@ body {
   border-bottom: 1px solid #eee;
 }
 
-/* Nav link styling */
 .nav a {
   text-decoration: none;
   color: #333;
@@ -40,12 +39,10 @@ body {
   background-color: #f0f0f0;
 }
 
-/* Dropdown wrapper */
 .nav > li {
   position: relative;
 }
 
-/* Dropdown content */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -61,7 +58,8 @@ body {
   min-width: 200px;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover .dropdown-menu,
+.dropdown-menu:hover {
   display: block;
 }
 
@@ -111,7 +109,6 @@ h1 {
   margin-right: auto;
   display: block;
 }
-
 
 .homepage-links a:hover {
   background: #007c98;

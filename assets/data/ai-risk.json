@@ -20,6 +20,11 @@
     "blurb": "Baristas face high automation risk in high-volume cafés. But no robot notices you're having a hard morning or pours a heart into the foam just because you always order the same thing. A good barista serves more than coffee."
   },
   {
+    "title": "cashier",
+    "risk": 0.97,
+    "blurb": "Cashiers are at very high risk of automation, with self-checkout kiosks and mobile payments doing more of the work every year. But human cashiers still shine where eye contact matters—when someone’s kid is crying, the coupon won’t scan, or a customer just needs to feel seen in the middle of a chaotic day. That’s not in the QR code."
+  },
+  {
     "title": "chef",
     "risk": 0.56,
     "blurb": "Chefs face moderate risk in chain kitchens where speed rules. But creating a dish that tells a story, adjusting a sauce by taste alone, or leading a team through dinner rush still requires heat, instinct, and a human palate."
