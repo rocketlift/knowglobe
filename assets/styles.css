@@ -15,60 +15,6 @@ body {
   padding: 1rem;
 }
 
-/* Navigation layout */
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0 auto;
-  padding: 1.5rem 1rem 1rem;
-  max-width: 1000px;
-  border-bottom: 1px solid #eee;
-}
-
-.nav > li {
-  position: relative;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  padding-bottom: 0.5rem; /* FIXED: keeps hover target stable */
-  border-radius: 4px;
-}
-
-.nav a:hover {
-  background-color: #f0f0f0;
-}
-
-/* Dropdown menu */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 2.5rem;
-  left: 0;
-  margin-top: 0.25rem; /* FIXED: closes hover gap */
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-  z-index: 100;
-  min-width: 200px;
-}
-
-.dropdown:hover .dropdown-menu {
-  display: block;
-}
-
-.dropdown-menu li {
-  margin: 0.5rem 0;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -122,17 +68,81 @@ h1 {
   font-size: 1.2rem;
   padding: 1rem;
   cursor: pointer;
+  background: #f0f0f0;
+  text-align: center;
 }
 
 #menu-toggle {
   display: none;
 }
 
+/* Grok's FIXED NAVIGATION DROPDOWN SYSTEM */
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  position: relative;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #333;
+  background-color: #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #ddd;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  min-width: 150px;
+  display: none;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  z-index: 1000;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+/* Mobile layout overrides */
 @media (max-width: 768px) {
   .nav {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0;
     display: none;
   }
 
@@ -142,8 +152,6 @@ h1 {
 
   .menu-icon {
     display: block;
-    text-align: center;
-    background: #f0f0f0;
     width: 100%;
   }
 
@@ -151,31 +159,12 @@ h1 {
     position: static;
     box-shadow: none;
     border: none;
+    opacity: 1;
+    display: block;
     padding: 0.25rem 0 0.75rem 1rem;
-    margin-top: 0; /* reset margin on mobile */
   }
 
   .dropdown-menu li {
     margin: 0.25rem 0;
-  }
-  .dropdown-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    min-width: 150px;
-    visibility: hidden;
-    opacity: 0;
-    transition: opacity 0.2s ease, visibility 0.2s ease;
-    z-index: 1000;
-  }
-
-  .nav-item:hover .dropdown-menu {
-    visibility: visible;
-    opacity: 1;
   }
 }
