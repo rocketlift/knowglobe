@@ -43,6 +43,7 @@ body {
   position: relative;
 }
 
+/* Dropdown menu */
 .dropdown-menu {
   display: none;
   position: absolute;
@@ -58,8 +59,7 @@ body {
   min-width: 200px;
 }
 
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
