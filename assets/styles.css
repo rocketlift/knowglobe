@@ -27,20 +27,21 @@ body {
   border-bottom: 1px solid #eee;
 }
 
+.nav > li {
+  position: relative;
+}
+
 .nav a {
   text-decoration: none;
   color: #333;
   font-weight: 500;
   padding: 0.25rem 0.5rem;
+  padding-bottom: 0.5rem; /* FIXED: keeps hover target stable */
   border-radius: 4px;
 }
 
 .nav a:hover {
   background-color: #f0f0f0;
-}
-
-.nav > li {
-  position: relative;
 }
 
 /* Dropdown menu */
@@ -49,6 +50,7 @@ body {
   position: absolute;
   top: 2.5rem;
   left: 0;
+  margin-top: 0.25rem; /* FIXED: closes hover gap */
   background: white;
   border: 1px solid #ddd;
   list-style: none;
@@ -150,6 +152,7 @@ h1 {
     box-shadow: none;
     border: none;
     padding: 0.25rem 0 0.75rem 1rem;
+    margin-top: 0; /* reset margin on mobile */
   }
 
   .dropdown-menu li {
