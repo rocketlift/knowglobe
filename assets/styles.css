@@ -151,6 +151,42 @@ nav {
   opacity: 1;
 }
 
+/* Map Grid Styles */
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.map-card {
+  display: block;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  background: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.map-card h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
 /* Responsive: Mobile layout */
 @media (max-width: 768px) {
   nav {

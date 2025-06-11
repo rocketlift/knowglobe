@@ -1,8 +1,11 @@
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets/data/ai-risk.json");
   eleventyConfig.addPassthroughCopy("assets/styles.css");
+  eleventyConfig.addPassthroughCopy("assets/maps"); // 👈 FIX for PNG visibility
   eleventyConfig.addWatchTarget("assets/data/ai-risk.json");
   eleventyConfig.addWatchTarget("assets/styles.css");
+  eleventyConfig.addPassthroughCopy("assets/favicon.ico");
+
 
   return {
     dir: {

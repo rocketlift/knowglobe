@@ -1,0 +1,23 @@
+{
+  "name": "know-globe",
+  "version": "1.0.0",
+  "main": ".eleventy.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rocketlift/knowglobe.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rocketlift/knowglobe/issues"
+  },
+  "homepage": "https://github.com/rocketlift/knowglobe#readme",
+  "description": "",
+  "dependencies": {
+    "sharp": "^0.34.2"
+  }
+}

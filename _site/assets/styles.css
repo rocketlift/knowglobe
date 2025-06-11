@@ -15,58 +15,6 @@ body {
   padding: 1rem;
 }
 
-/* Navigation layout */
-.nav {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  list-style: none;
-  margin: 0 auto;
-  padding: 1.5rem 1rem 1rem;
-  max-width: 1000px;
-  border-bottom: 1px solid #eee;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #333;
-  font-weight: 500;
-  padding: 0.25rem 0.5rem;
-  border-radius: 4px;
-}
-
-.nav a:hover {
-  background-color: #f0f0f0;
-}
-
-.nav > li {
-  position: relative;
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 2.5rem;
-  left: 0;
-  background: white;
-  border: 1px solid #ddd;
-  list-style: none;
-  padding: 0.5rem 1rem;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  white-space: nowrap;
-  z-index: 100;
-  min-width: 200px;
-}
-
-.dropdown:hover .dropdown-menu,
-.dropdown-menu:hover {
-  display: block;
-}
-
-.dropdown-menu li {
-  margin: 0.5rem 0;
-}
-
 /* Footer */
 footer {
   text-align: center;
@@ -120,17 +68,140 @@ h1 {
   font-size: 1.2rem;
   padding: 1rem;
   cursor: pointer;
+  background: #f0f0f0;
+  text-align: center;
 }
 
 #menu-toggle {
   display: none;
 }
 
+/* NAVIGATION — Grok hover fix + visual cleanup */
+nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+  justify-content: center;
+}
+
+.nav-item {
+  position: relative;
+}
+
+.nav-link {
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #111;
+  background: none;
+  font-weight: 500;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.nav-link:hover {
+  background-color: #e0f7fa;
+}
+
+/* Dropdown menu styling */
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  min-width: 160px;
+  display: none;
+  transition: opacity 0.2s ease;
+  opacity: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 15px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a:hover {
+  background-color: #f0f0f0;
+}
+
+/* Show dropdown on hover */
+.nav-item:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+/* Map Grid Styles */
+.map-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  margin-top: 2rem;
+}
+
+.map-card {
+  display: block;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 16px;
+  background: white;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.map-card:hover {
+  transform: scale(1.02);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.map-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.map-card h2 {
+  font-size: 1.2rem;
+  margin: 0;
+  color: #333;
+}
+
+/* Responsive: Mobile layout */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .menu-icon {
+    display: block;
+    width: 100%;
+  }
+
   .nav {
     flex-direction: column;
     align-items: flex-start;
-    padding: 0;
     display: none;
   }
 
@@ -138,15 +209,10 @@ h1 {
     display: flex;
   }
 
-  .menu-icon {
-    display: block;
-    text-align: center;
-    background: #f0f0f0;
-    width: 100%;
-  }
-
   .dropdown-menu {
     position: static;
+    opacity: 1;
+    display: block;
     box-shadow: none;
     border: none;
     padding: 0.25rem 0 0.75rem 1rem;
